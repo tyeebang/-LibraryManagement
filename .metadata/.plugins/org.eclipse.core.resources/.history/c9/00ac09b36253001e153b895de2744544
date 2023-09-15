@@ -1,0 +1,25 @@
+<%@page import="dao.MemberDAO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<%
+		MemberDAO = new MemberDAO();
+		int n = 0;
+		String id = request.getParameter("id");
+		
+		n = dao.deleteMember(id);
+		
+		if (n > 0) {
+			response.sendRedirect("./memberList.jsp");
+		} else {
+			out.print("<script> alert('회원정보 삭제를 실패하였습니다.); </script>");
+		}
+	%>
+</body>
+</html>
