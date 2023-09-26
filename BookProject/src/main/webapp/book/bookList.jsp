@@ -27,8 +27,8 @@
 			<td><%= data.getAuthor() %></td>
 			<td><%= data.getCompany() %></td>
 			<td><%= data.getPrice() %></td>
-			<td> <a href="#"> 수정 </a> </td>
-			<td> <a href="#"> 삭제 </a> </td>
+			<td> <a href="/BookProject/updateBook?isbn=<%= data.getIsbn() %>"> 수정 </a> </td>
+			<td> <a href="/BookProject/deleteBook?isbn=<%= data.getIsbn() %>"> 삭제 </a> </td>
 		</tr>
 <%
 		}
